@@ -78,7 +78,8 @@ var arrayOne = ['string', 'cheese', 'pizza', 'longwordssss'];
 
 //8
 function filterLongWords(arrayOfWords, i) {
-  t
+  arrayOfWordsLongerThanI = [];
+
   }
 
 
