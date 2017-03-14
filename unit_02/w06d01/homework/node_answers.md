@@ -5,37 +5,58 @@
 
 ### The 6 highest-starred npm packages are:
 
-# Library 1 Name
+# Express
 
 ### Description:
-brief brief description here
+###Express is designed to make HTTP servers.
 
 ### Total Downloads last month:
 
-# Library 2 Name
+###11M
+
+# Gulp
 
 ### Description:
-brief description here
+###Gulp is a toolkit to automate certain tasks pertaining to
+###streaming builds and save you time.
 
 ### Total Downloads last month:
+###3M
 
-# Library 3 Name
+# Request
+
 
 ### Description:
-brief description here
+###Request makes it easter to make HTTP calls.
 
 ### Total Downloads last month:
+###20,853,459
 
-# Library 4 Name
+# Async
 
 ### Description:
-brief description here
+###Async is a utility module providing about 70 functions for
+### node.js.
 
 ### Total Downloads last month:
+### 42,353,885
 
-# Library 5 Name
+# lodash
 
 ### Description:
-brief description here
+###lodash is supposed to make it easier to iterate over arrays, objects, and strings.
 
 ### Total Downloads last month:
+### 40,760,784
+
+# pm2
+
+### Description:
+### pm2 is a process manager for node.js applications.
+
+###downloads:
+### 513,090
+
+
+
+
