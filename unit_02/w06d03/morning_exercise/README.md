@@ -20,7 +20,8 @@ Write a `barrel` function that calculates and returns the price of a large barre
 
 ```
 var barrel = function(small, large, total){
-  //your code here
+var totalLarge = total - (small * 60);
+return totalLarge/large;
 };
 
 barrels(2,3,825) => 141
@@ -51,7 +52,7 @@ Write a `shipFuelCost` function that calculates and returns the total cost as a 
 
 ```
 var shipFuelCost = function(fuelPrice, milesPerGallon){
-  //your code here
+
 };
 
 shipFuelCost(3, 12) => 6225.25
@@ -78,7 +79,11 @@ Write a `calcFruitJuice` function that calculates and returns the total percenta
 
 ```
 var calcFruitJuice = function(a, b, c, d){
-  //your code here
+  var costcoJuice = (a * b);
+  var kirklandsJuice = (c * d);
+  totalDrink = d + b;
+  totalJuice = costcoJuice + kirklandsJuice;
+  return totalDrink/totalJuice;
 };
 
 calcFruitJuice(3, 20, 2, 55) => 0.34

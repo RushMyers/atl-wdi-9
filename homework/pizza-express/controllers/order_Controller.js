@@ -7,6 +7,7 @@ router.get('/:amount/:size', function(req, res) {
     number: req.params.amount,
     size: req.params.size
   });
+  console.log(req.params);
 });
 
 module.exports = router;

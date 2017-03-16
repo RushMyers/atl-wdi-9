@@ -14,7 +14,9 @@ return largeBarrel;
 // Sailing the Seas
 
 var shipFuelCost = function(fuelPrice, milesPerGallon){
-  //your code here
+  var earthCirc = 24901;
+  var totalGallons = 24901/milesPerGallon;
+  return fuelPrice * totalGallons;
 };
 
 //*************************
@@ -22,7 +24,14 @@ var shipFuelCost = function(fuelPrice, milesPerGallon){
 // GROG
 
 var calcFruitJuice = function(a, b, c, d){
-  //your code here
+  var costcoJuice = a * b;
+  var kirklandsJuice = c * d;
+  var totalDrink = d + b;
+  var totalJuice = costcoJuice + kirklandsJuice;
+  return totalDrink/totalJuice;
+};
+
+calcFruitJuice(3, 20, 2, 55) => 0.34
 };
 
 //DO NOT EDIT BELOW THIS LINE//

@@ -3,10 +3,14 @@ var app = express();
 var port = 3000;
 var hbs = require('hbs');
 app.set("view engine", "hbs");
-app.use('/static', express.static('public'));
+app.set('views', './views');
+app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
-  res.send("Welcome to Pizza Express")
+app.get('/', function (req, res) {
+  var message = "welcome!";
+  res.render('layout', {
+    data: message
+  });
 });
 
 var toppingsController = require(__dirname + '/controllers/toppings_Controller.js');
