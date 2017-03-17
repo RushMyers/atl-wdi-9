@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) =>{
     var todont = data.seededToDonts[req.params.id];
-    res.render('todont/show', {
+    res.retnder('todont/show', {
       chosenToDont: todont
     });
 });
