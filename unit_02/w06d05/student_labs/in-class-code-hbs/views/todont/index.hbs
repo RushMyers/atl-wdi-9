@@ -1,0 +1,14 @@
+<ol>
+    {{#each todonts}}
+    <li>
+    Description: {{description}}
+    <br>
+    Urgent: {{urgent}}
+    </li>
+    <form action="/{{@index}}?_method=DELETE" method=POST">
+      <input type="Submit" value="delete">
+    </form>
+    <hr>
+    {{/each}}
+</ol>
+

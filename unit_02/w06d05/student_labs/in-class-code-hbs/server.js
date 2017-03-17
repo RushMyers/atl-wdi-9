@@ -1,31 +1,27 @@
-/* packages */
-var path        = require('path');
-var logger      = require('morgan');
-var express     = require('express');
-var hbs         = require('hbs');
-var bodyParser  = require('body-parser');
-var todosController = require('./controllers/todos.js');
-/* app settings*/
-var app         = express();
-var port        = process.env.PORT || 3000;
-/* set up the application params*/
-
-// log
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-app.use( logger('dev'));
-app.use('/todos', todosController);
-
-/*Views*/
+var express = require('express');
+var app = express();
+var hbs = require('hbs');
 app.set('view engine', 'hbs');
 
-/* HOME */
-app.get('/', function(req,res) {
-  res.send('This is our Home Page');
-});
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({}));
 
-// Start server
-app.listen(port, function() {
-  console.info('Server Up -- Ready to serve hot todos on port', port,"//", new Date());
+var override = require('method-override');
+app.use(override('_method'));
+
+var todontController = require ('./controllers/todont.js');
+app.use('/', todontController);
+
+
+
+
+
+
+
+
+
+
+
+app.listen(3000, () => {
+    console.log("Listening to port 3000!!!!");
 });
