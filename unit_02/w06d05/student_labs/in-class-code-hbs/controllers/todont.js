@@ -28,9 +28,9 @@ router.post('/', (req, res) => {
     res.redirect('/');
 });
 
-router.get('/:id', (req, res) =>{
+router.get('/:id', (req, res) => {
     var todont = data.seededToDonts[req.params.id];
-    res.retnder('todont/show', {
+    res.render('todont/show', {
       chosenToDont: todont
     });
 });

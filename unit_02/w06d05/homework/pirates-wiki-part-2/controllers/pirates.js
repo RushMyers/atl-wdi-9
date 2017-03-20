@@ -36,16 +36,46 @@ router.get('/:id', function(req, res){
 
 //==============================
 // CREATE
+router.post('/', (req, res) => {
+  var newPirate = {
+    name: req.body.name,
+    birthplace: req.body.birthplace,
+    death_year: req.body.death_year,
+    base: req.body.base,
+    nickname: req.body.nickname
+    };
+  pirates.push(newPirate);
+  res.redirect('/pirates');
+});
+
 //==============================
 
 //==============================
 // UPDATE
 //==============================
+router.get('/edit/:id', (req, res) => {
+  res.render('pirates/update.hbs');
+});
+router.post('/pirates', (req, res) => {
+  var editedPirate = {
+    name: req.body.name,
+    birthplace: req.body.birthplace,
+    death_year: req.body.death_year,
+    base: req.body.base,
+    nickname: req.body.nickname
+  };
+  pirates[req.params.id] = editedPirate;
+  res.redirect('/pirates');
+});
 
 //==============================
 // DESTROY
 //==============================
 
+router.delete('/:id', (req, res) => {
+  pirates.splice(req.params.id, 1);
+  res.redirect('/pirates');
+});
 //==============================
 // EXPORTS
 //==============================

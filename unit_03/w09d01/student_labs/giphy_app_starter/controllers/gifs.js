@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     console.log(gifs)
     res.json({ gifs })
   });
-})
+});
 
 router.post('/', function(req, res){
   var gif = new Gif(req.body);

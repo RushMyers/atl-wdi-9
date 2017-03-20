@@ -3,6 +3,13 @@
 <ul>
   {{#each pirates}}
     <li><a href="/pirates/{{@index}}"><h2>{{name}}</h2></a></li>
+
+    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+    <input type="Submit" value="delete">
+    </form>
+    <form action="/pirates/edit/{{@index}}" method="GET">
+    <input type="Submit" value="edit">
+    </form>
   {{/each}}
 </ul>
 
