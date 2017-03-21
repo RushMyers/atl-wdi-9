@@ -22,7 +22,7 @@ let inFile = process.argv[2];
 // });
 
 //SOLUTION
-let readTheFilePromise = new Promise(function(resolve, reject){
+let readTheFilePromise = new Promise(function(resolve, reject) {
   fs.readFile(inFile, { encoding: 'utf8' }, function(error, content) {
     resolve(content);
     reject("line 28 error ", error);
