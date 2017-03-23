@@ -10,7 +10,9 @@ router.get('/', function(req, res){
     .exec(function(err, users){
       if (err) { console.log(err); }
       console.log(users);
-      res.send(users);
+      res.render('users/index', {
+        users: users
+      });
     });
 });
 
@@ -20,9 +22,24 @@ router.get('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log(user);
-    res.send(user);
+    res.render('users/show', {
+      user: user
+    });
   });
 });
+// USER EDIT ROUTE
+router.get('/:id/edit', function(req, res){
+  User.findById(req.params.id)
+  .exec(function(err, user) {
+    if (err) console.log(err);
+    console.log(user);
+    res.render('users/edit.hbs', {
+      user: user
+    });
+  });
+});
+
+
 
 // USER CREATE ROUTE
 router.post('/', function(req, res){
@@ -47,7 +64,9 @@ router.patch('/:id', function(req, res){
   .exec(function(err, user){
     if (err) { console.log(err); }
     console.log(user);
-    res.send(user);
+    res.render('users/show.hbs', {
+      user: user
+    });
   });
 });
 
@@ -57,20 +76,36 @@ router.delete('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log('User deleted!');
-    res.send("User deleted");
+    res.redirect('users/index.hbs');
   });
 });
+// ITEMS INDEX
 
 // ADD A NEW ITEM
-router.post('/:id/items', function(req, res){
-  User.findById(req.params.id)
-  .exec(function(err, user){
-    user.items.push(new Item({name: req.body.name}));
-    user.save(function(err){
-      if (err) console.log(err);
-      res.send(user);
+// router.post('/:id/items', function(req, res){
+//   User.findById(req.params.id)
+//   .exec(function(err, user){
+//     user.items.push(new Item({name: req.body.name}));
+//     user.save(function(err){
+//       if (err) console.log(err);
+//       res.render('items/index.hbs' {
+//         items: user.items
+//         user: user
+//       });
+//     });
+//   });
+// });
+
+// USERS INDEX ROUTE
+router.get('/', function(req, res){
+  User.find({})
+    .exec(function(err, users){
+      if (err) { console.log(err); }
+      console.log(users);
+      res.render('users', {
+        users: users
+      });
     });
-  });
 });
 
 // REMOVE AN ITEM
@@ -82,7 +117,7 @@ router.delete('/:userId/items/:id', function(req, res){
   })
   .exec(function(err, item){
     if (err) console.log(err);
-    res.send(item + " Item deleted");
+    res.redirect('/users');
   });
 });
 
