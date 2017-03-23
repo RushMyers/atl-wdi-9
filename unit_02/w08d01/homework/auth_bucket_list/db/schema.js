@@ -5,6 +5,7 @@ mongoose.Promise = global.Promise;
 
 //add ListSchema here
 //your code
+var ListSchema = new Schema ({});
 
 var UserSchema = new Schema({
   username: String,

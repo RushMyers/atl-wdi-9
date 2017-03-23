@@ -20,7 +20,13 @@ app.use('/users/:userId/project-ideas', projectIdeasController);
 
 // Mongoose stuff
 var mongoose = require('mongoose');
+if(process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+}
+else {
 mongoose.connect('mongodb://localhost/express-mongoose-lesson-starter');
+}
+
 
 // Now that we're connected, let's save that connection to the database in a variable.
 var db = mongoose.connection;
