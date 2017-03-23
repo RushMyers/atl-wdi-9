@@ -12,13 +12,14 @@ var mongoose = require('mongoose');
 
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
+var listController = require('./controllers/sessions.js');
 
 // require the list controller here
 
 var app = express();
 
 mongoose.connect('mongodb://localhost/auth');
-
+var db = mongoose.connection;
 app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use(session({
 
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
+app.use('/users/:id/lists', listController)
 
 //add the third app.use here (check readme for which route)
 

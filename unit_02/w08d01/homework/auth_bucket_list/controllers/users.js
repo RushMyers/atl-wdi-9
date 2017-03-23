@@ -20,7 +20,9 @@ router.get('/signup', function(req, res){
 });
 
 //SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
+router.get('/:id', authHelpers.authorized, function(req, res) {
 
+});
 
 
 
@@ -29,6 +31,7 @@ router.get('/signup', function(req, res){
 router.post('/', authHelpers.createSecure, function(req, res){
 
   var user = new User({
+    username: req.body.username,
     email: req.body.email,
     password_digest: res.hashedPassword
   });
