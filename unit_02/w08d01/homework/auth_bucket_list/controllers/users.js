@@ -1,6 +1,6 @@
 //require express, router, User Schema, List Schema, authHelpers
 var express = require('express');
-router = express.Router();
+var router = express.Router();
 var User = require('../models/user.js');
 var List = require('../models/list.js');
 var authHelpers = require('../helpers/auth.js');
@@ -8,7 +8,7 @@ var authHelpers = require('../helpers/auth.js');
 //SHOW: create a GET "/" that displays all users on the index page
 router.get('/', function(req, res) {
   User.find({})
-  .exec(function(err, users){
+  .exec(function(err, users) {
     if (err) { console.log(err); }
     res.render('users/index.hbs', { users: users });
   });
@@ -19,12 +19,21 @@ router.get('/signup', function(req, res){
   res.render('users/signup.hbs');
 });
 
-//SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
-router.get('/:id', authHelpers.authorized, function(req, res) {
-
+//Get for login page
+router.get('/login', function(req,res) {
+  res.render('users/login.hbs');
 });
 
-
+//SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
+router.get('/:id', authHelpers.authorized, function(req, res) {
+  User.findById(req.params.id)
+    .exec(function (err, user) {
+      if (err) { console.log(err);}
+      res.render('users/show.hbs', {
+        user: user
+      });
+    });
+});
 
 //User registration
 //Auth stuff: POST "/" save username, email, and password

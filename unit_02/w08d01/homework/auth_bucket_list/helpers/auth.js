@@ -31,11 +31,11 @@ function loginUser(req, res, next) {
 //your code here
 function authorized(req, res, next) {
   var theUser = req.session.currentUser;
-  if (!theUser || req.params.id !== theUser.id) {
-    res.json({status: 404, data: "uh oh.  you aren't authorized. haha"});
+  if (!theUser || req.params.id !== theUser._id) {
+    res.json({status: 404, data: "uh oh. you aren't authorized. haha"});
       }
   next();
-}
+};
 //Export this function below:
 
 module.exports = {
