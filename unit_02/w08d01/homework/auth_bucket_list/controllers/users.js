@@ -1,7 +1,7 @@
 //require express, router, User Schema, List Schema, authHelpers
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user.js');
+var User = require('../models/users.js');
 var List = require('../models/list.js');
 var authHelpers = require('../helpers/auth.js');
 
@@ -53,5 +53,9 @@ router.post('/', authHelpers.createSecure, function(req, res){
   });
 });
 
+router.post('/login', authHelpers.loginUser, function(req, res){
+  consolse.log("hello");
+  res.redirect('/users' + req.session.currentUser._id);
+});
 
 module.exports = router;

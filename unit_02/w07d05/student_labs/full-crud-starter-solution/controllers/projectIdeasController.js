@@ -32,7 +32,7 @@ router.get('/:id/edit', function editProjectIdea(req, res) {
 });
 
 // UPDATE
-router.put('/:id', function updateProjectIdea(req, res){
+router.put('/:id', function updateProjectIdea (req, res){
   User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }

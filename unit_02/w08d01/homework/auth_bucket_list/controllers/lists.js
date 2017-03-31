@@ -3,12 +3,11 @@
 //======================
 //require express,router,  mongoose, List schema, User schema, authHelpers
 var express = require('express');
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 var mongoose = require('mongoose');
 var User = require('../models/user.js');
 var List = require('../models/list.js');
 var authHelpers = require('../helpers/auth.js');
-
 //======================
 // CREATE
 //======================
@@ -20,12 +19,15 @@ router.post('/', function(req, res) {
       res.render("")
   });
 });
+
 //======================
 //Render "new Item" Page
 //======================
-router.get('/:id/new', function(req, res) {
+
+router.get('/new', function(req, res) {
   res.render("/lists/new.hbs")
 });
+
 //======================
 // EDIT
 //======================

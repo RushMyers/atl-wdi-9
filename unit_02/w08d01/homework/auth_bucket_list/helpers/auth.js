@@ -3,7 +3,6 @@ var User = require('../models/user.js');
 
 function createSecure(req, res, next) {
   var password = req.body.password;
-
   res.hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   next();
 }
@@ -19,6 +18,7 @@ function loginUser(req, res, next) {
 
     } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
       req.session.currentUser = foundUser;
+      console.log(foundUser);
     }
     next();
   })
@@ -28,6 +28,7 @@ function loginUser(req, res, next) {
 }
 
 //create a function called "authorized" that checks if the CurrentUser's id matches the id in params
+
 //your code here
 function authorized(req, res, next) {
   var theUser = req.session.currentUser;
