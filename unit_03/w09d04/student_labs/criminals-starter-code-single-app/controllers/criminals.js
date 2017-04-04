@@ -58,7 +58,7 @@ router.patch('/:id', function updateAction(request, response) {
 
 router.delete('/:id', function destroyAction(request, response) {
   var id = request.params.id;
-
+  console.log(request.params.name);
   Criminal.remove({_id: id}, function(error) {
     if(error) response.json({message: 'Could not delete criminal b/c:' + error});
 
