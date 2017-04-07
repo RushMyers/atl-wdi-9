@@ -1,0 +1,9 @@
+<div>
+<h1>new Criminal</h1>
+  <form ng-submit="$ctrl.createNewCriminal($ctrl.newCriminal)">
+      <input value="name" type="text" placeholder="Name" ng-model="$ctrl.newCriminal.name">
+      <input value = "crime" type="text" placeholder="Crime" ng-model="$ctrl.newCriminal.crime">
+      <input type="submit" value="submit">
+  </form>
+  <div><span>{{$ctrl.newCriminal.name}}</span><span>{{$ctrl.newCriminal.crime}}</span></div>
+</div>
