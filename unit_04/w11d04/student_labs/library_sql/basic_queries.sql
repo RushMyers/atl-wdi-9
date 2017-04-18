@@ -5,7 +5,7 @@
 
 -- Get just the name and birth year of all authors
 
--- Get all authors born in the 20th centruy or later
+-- Get all authors born in the 20th century or later
 
 -- Get all authors born in the USA
 
