@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
 require 'pry'
 
 shopping_list = ['peanuts', 'apple', 'coffee', 'pretzel sticks', 'fruit snacks', 'pretzel nuggets']
@@ -12,7 +12,7 @@ end
 
 lengths(@words)
 
-========fizzbuzz==========
+# ========fizzbuzz==========
 
 def fizzbuzz
     (0..20).each do |num|
@@ -30,7 +30,7 @@ end
 
 fizzbuzz
 
-========starts with 'A'=========
+# ========starts with 'A'=========
 
 if shopping_list[1].start_with? 'a'
   puts "yes"
@@ -38,19 +38,15 @@ else
   puts "Srry, doesn't have A"
 end
 
-=====even?======
+# =====even?======
 
-if shopping_list.length.even?
-  puts true
-else
-  puts false
-end
+puts shopping_list.length.even?
 
-======== square =========
+# ======== square =========
 
 puts "first item is #{shopping_list[0].length} letters long"
 
-square = shopping_list[0].length * shopping_list[0].length
+square = shopping_list[0].length**2
 
 puts "the square is #{square} letters"
 
@@ -60,7 +56,7 @@ response = gets.chomp
 
 puts "#{square.to_i + response.to_i}"
 
-=========numbered=========
+# =========numbered=========
 
 @num = 1
 

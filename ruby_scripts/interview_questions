@@ -1,0 +1,26 @@
+Give three different examples of inheritance. Write these class definitions and their inheritance relationships out in Ruby.
+What is the difference (in your own words) between a local variable, an instance variable, and class variable.
+What is encapsulation?
+What is a private method?
+What is the difference between a class and an object? What is the difference between a class and an instance?
+What is "duck typing" in Ruby?
+Describe "Polymorphism"
+What is a "base class", "sub-class", and "super class"?
+
+1. Car > Toyota > Corolla
+
+2. - A local variable is created inside a class and can only be accessed there.  It is only stored as long as the class function is running.
+  - an instance variable is created inside the class, but it can be accessed by other classes
+  - A class variable will set an attribute that cannot be changed for a specific instance. Also, if a class variable is reassigned, it will also be reassigned for all ancestors and descendants.
+
+3. Encapsulation is when you put all the variables and ways you want them to be able to be manipulated inside the class object.  This makes code cleaner and clearer, and also gives you more control over what can and cant be dont to the class and its instances.
+
+4. A private method can only be accessed within the scope of the object where it is defined.
+
+5. A class is like javascript prototype for an object.  It is sort of a model for creating objects that have the same characteristics.  A class is a type of object.  Objects just store data.  An instance is a specific object created with a class object.
+
+6. Duck typing is when you make a class a descendant of another class just to reuse some information that they have in common, even though in the real world they are not related(at least in the same way they are being modeled)
+
+7. Polymorphism describes the way you can send the same information to two or more different methods and get different results.
+
+8. A base class is a predefined class object that can be used as an ancestor to take advantage of pre-defined characteristics that it has.  A "sub-class" is a smaller class that branches off of an ancestor class("super-class").  Super-class is more general than sub-class.  For instance arachnids would be a super-class in relation to a black_widow which would be a sub-class
