@@ -1,0 +1,15 @@
+<!-- <h1>Comments#index</h1>
+<p>Find me in app/views/comments/index.html.erb</p>
+ -->
+<p><%= @article.content %></p>
+
+<ul>
+  <% @comments.each do |comment| %>
+  <li>
+    <p>"<%= comment.content %>"</p>
+
+    <b><i>-<%= comment.commenter %></i></b>
+  </li>
+  <%end%>
+</ul>
+<%= link_to 'click to go back', articles_index_path %>
